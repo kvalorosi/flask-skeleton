@@ -4,15 +4,46 @@ from flask import render_template
 
 @app.route('/')
 def land():
-    return render_template('index.html')
+     trails = [
+        {
+            'trail': 'Captian Ahab',
+            'place': 'Moab,Utah'
 
-@app.route('/')
+        },
+        {
+            'trail': 'Chuckanut',
+            'place': 'Bellingham,Washington'
+        },
+        {
+            'trail': 'White Knuckle',
+            'place': 'Port Angeles,Washington'
+        },
+        {
+            'trail': 'Porcupine Rim Trail',
+            'place': 'Moab,Utah'
+        },
+        {
+            'trail': 'Mr. Toads',
+            'place': 'South Lake Tahoe,California'
+        }
+            
+    ]
+        
+        
+     return render_template('index.html',trails=trails)
+              
+    
+    
+
+
+    
+
+@app.route('/home')
 def home():
-    return {
-        'Welcome home': 'There is no place like here'
-    }
+       return 
+        
 
-@app.route('/')
+@app.route('/test')
 def test():
     return {
         'Is the mic on?': 'Is this function working??'
